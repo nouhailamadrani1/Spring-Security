@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/jwtdemo00
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver  # Remplacez par le pilote MySQL approprié
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    database-platform: org.hibernate.dialect.MySQLDialect  # Remplacez par le dialecte MySQL approprié
+    properties:
+      hibernate:
+        format_sql: true
+application:
+  security:
+    jwt:
+      secret-key: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+      expiration: 86400000 # une journée en millisecondes
+      refresh-token:
+        expiration: 604800000 # 7 jours en millisecondes
